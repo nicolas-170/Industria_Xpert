@@ -5,13 +5,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title> Industria_Xpert </title>
-  <link rel="stylesheet" href="css/index.css"/>
+  <link rel="stylesheet" href="css/index.css" />
   <script defer src="js/auth.js"></script>
 </head>
 
 <body>
   <header>
-
     <h1 class="titulo">Industria Xpert</h1>
     <nav>
       <div class="nav-left">
@@ -20,14 +19,11 @@
         <a class="contact" href="contact.html">Contacto</a>
       </div>
       <div class="nav-right" id="user-section">
-        <!-- Aquí JS insertará los botones de login o perfil -->
       </div>
     </nav>
-
   </header>
 
   <main>
-
     <section class="hero">
       <h2>Todo lo que necesitas para el colegio</h2>
       <img src="assets/images/image.png" alt="Banner productos escolares" />
@@ -35,20 +31,14 @@
 
     <section class="productos">
       <h3>Productos destacados</h3>
-      <div class="grid-productos">
-        <article>
-          <img src="assets/images/image.png" alt="Cuaderno" />
-          <h4>Cuaderno</h4>
-        </article>
-        <article>
-          <img src="assets/images/image.png" alt="Mochila" />
-          <h4>Mochila</h4>
-        </article>
+      <div class="grid-productos" id="productos-container">
       </div>
-
     </section>
   </main>
 
+</body>
+<script src="js/config.js"></script>
+<script src="js/cargarProducts.js"></script>
 </body>
 
 </html>

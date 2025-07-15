@@ -7,7 +7,7 @@ body {
 
 header {
   background-color: #ffffff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 10px 40px;
 }
 
@@ -71,7 +71,7 @@ nav a:hover {
   max-width: 100%;
   height: auto;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* Sección de productos */
@@ -99,9 +99,11 @@ nav a:hover {
   border: 1px solid #e0e0e0;
   border-radius: 10px;
   padding: 15px;
-  text-align: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .grid-productos article:hover {
@@ -117,28 +119,78 @@ nav a:hover {
 }
 
 .grid-productos h4 {
-  margin: 0;
+  margin: 0 0 10px 0;
   font-size: 1.1em;
   color: #555;
 }
 
-/* estilos del perfil */
+/* Styles for product information rows */
+.product-info-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 2px 0;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.product-info-row .label {
+  font-weight: bold;
+  margin-right: 5px;
+  text-align: left;
+}
+
+.product-info-row .value {
+  text-align: right;
+  flex-grow: 1;
+}
+
+/* --- Styles for the "Add to Cart" button --- */
+.add-to-cart-btn {
+  background-color: #28a745;
+  /* A vibrant green */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin-top: 15px;
+  /* Space above to separate from product info */
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: calc(100% - 30px);
+  /* Occupy almost full width, accounting for article padding */
+  max-width: 200px;
+  /* Limit width on larger screens if card is too wide */
+  text-align: center;
+  /* Ensure text is centered within the button */
+}
+
+.add-to-cart-btn:hover {
+  background-color: #218838;
+  /* Darker green on hover */
+  transform: translateY(-2px);
+  /* Slight lift effect */
+}
+
+/* Profile info styles */
 .perfil-info {
-  display: flex; 
-  align-items: 
-  center; gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .perfil-info img {
-  width: 30px; 
+  width: 30px;
   border-radius: 50%;
 }
 
-/* Cuando existe boton de registro */
+/* Styles for the registration button */
 .register {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #4f46e5; /* Azul vibrante */
+  background-color: #4f46e5;
   color: #fff;
   text-decoration: none;
   border-radius: 999px;
@@ -149,16 +201,16 @@ nav a:hover {
 }
 
 .register:hover {
-  background-color: #3730a3; /* Azul más oscuro al pasar el mouse */
+  background-color: #3730a3;
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Cuando existe boton de cerrar sesion */
 .logout-btn {
   margin: 5px;
   padding: 5px 5px;
-  background-color: #ef4444; /* Rojo elegante */
+  background-color: #ef4444;
+  /* Elegant red */
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -170,7 +222,8 @@ nav a:hover {
 }
 
 .logout-btn:hover {
-  background-color: #b91c1c; /* Rojo más oscuro */
+  background-color: #b91c1c;
+  /* Darker red */
   transform: scale(1.05);
   box-shadow: 0 6px 12px rgba(239, 68, 68, 0.4);
 }
