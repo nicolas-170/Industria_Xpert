@@ -58,3 +58,26 @@ body {
 .login-form p a:hover {
   text-decoration: underline;
 }
+
+/* Estilos para el mensaje de error */
+.error-message {
+  color: #d9534f;
+  background-color: #f2dede;
+  border: 1px solid #ebccd1;
+  padding: 7px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 0.9em;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease-in-out, 
+  max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+}
+
+.error-message.show-error {
+  opacity: 1;
+  max-height: 50px;
+  padding: 10px;
+}
