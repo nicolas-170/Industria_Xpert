@@ -8,16 +8,19 @@
 </head>
 
 <body>
+  <script src="./js/config.js"></script>
+  <script src="./js/registrar.js"></script>
   <main>
-    <form class="register-form">
+    <form class="register-form" id="registrar">
       <h2>Registro</h2>
-      <input type="text" placeholder="celular" required />
-      <input type="email" placeholder="nombre" required />
-      <input type="email" placeholder="correo" required />
-      <input type="text" placeholder="identificacion" required />
-      <input type="text" placeholder="direccion" required />
-      <input type="password" placeholder="Contraseña" required />
-      <input type="password" placeholder="Confirmar contraseña" required />
+      <input type="text" placeholder="celular" required id="celular" />
+      <input type="text" placeholder="nombre" required id="nombre"/>
+      <input type="email" placeholder="correo" required id="correo"/>
+      <input type="text" placeholder="identificacion" required id="identificacion"/>
+      <input type="text" placeholder="direccion" required id="direccion"/>
+      <input type="password" placeholder="Contraseña" required/>
+      <input type="password" placeholder="Confirmar contraseña" id="password" required/>
+      <div id="error-registrar"></div>
       <button type="submit">Registrarse</button>
     </form>
   </main>

@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const password = document.getElementById("password").value;
 
     try {
+      /*API_BASE_URL su valor es: http://127.0.0.1:7777/Industria-Xpert*/
       const response = await fetch(`${API_BASE_URL}/clientes/autenticarse`, {
         method: "POST",
         headers: {
