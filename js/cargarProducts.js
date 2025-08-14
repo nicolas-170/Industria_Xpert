@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", async () => {
     const productosContainer = document.getElementById("productos-container");
+    const numberCart = document.getElementById("number-cart");
     const API_URL = `${API_BASE_URL}/productos/obtener-todos`;
 
     // Define un producto de prueba simple
@@ -71,7 +72,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                     <span class="label">Tipo:</span>
                     <span class="value">${producto.tipo || 'N/A'}</span>
                 </div>
-                <div class="product-info-row">
+                <div class="product-info-row">   
                     <span class="label">Precio:</span>
                     <span class="value">$${(producto.precio || 0).toFixed(2)}</span>
                 </div>
@@ -105,7 +106,18 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
 
         localStorage.setItem('cart', JSON.stringify(cart));
-        alert(`${product.nombre} ha sido añadido al carrito.`);
-        console.log("Carrito actual:", cart);
+        console.log("Carrito actual:", numberCart);
+
+        incrementarNumeroCarrito()
+    }
+
+    function incrementarNumeroCarrito(){
+        if (isNaN(numberCart.value)){
+            valor = 0
+        } else{
+          console.log(numberCart.value)  
+            valor = numberCart.value
+        }
+        numberCart.textContent = valor + 1
     }
 });

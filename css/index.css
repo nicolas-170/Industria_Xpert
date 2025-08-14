@@ -147,7 +147,8 @@ nav a:hover {
 
 /* --- Styles for the "Add to Cart" button --- */
 .add-to-cart-btn {
-  background-color: #28a745;
+  background-color: #9909e1
+  ;
   /* A vibrant green */
   color: white;
   border: none;
@@ -168,7 +169,8 @@ nav a:hover {
 }
 
 .add-to-cart-btn:hover {
-  background-color: #218838;
+  background-color: #c66af4
+  ;
   /* Darker green on hover */
   transform: translateY(-2px);
   /* Slight lift effect */
@@ -190,7 +192,7 @@ nav a:hover {
 .register {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #4f46e5;
+  background-color: #9909e1;
   color: #fff;
   text-decoration: none;
   border-radius: 999px;
@@ -201,7 +203,7 @@ nav a:hover {
 }
 
 .register:hover {
-  background-color: #3730a3;
+  background-color: #9909e1;
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
@@ -226,4 +228,30 @@ nav a:hover {
   /* Darker red */
   transform: scale(1.05);
   box-shadow: 0 6px 12px rgba(239, 68, 68, 0.4);
+}
+
+/* Estilos del boton carrito*/
+.cart-button {
+  position: relative;
+  /*display: inline-block;*/ 
+  text-decoration: none; /* para quitar subrayado */
+}
+
+.cart-icon {
+  width: 40px;
+  height: auto;
+}
+
+.cart-count {
+  position: relative;
+  top: -5px;
+  right: -5px;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+.btn-cart-buton {
+  border:2px solid purple;
 }

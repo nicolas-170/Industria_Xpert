@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         const identificacion = document.getElementById("identificacion").value;
         const direccion = document.getElementById("direccion").value;
         const password = document.getElementById("password").value;
-        console.log(password)
 
         try{
             const response = await fetch(`${API_BASE_URL}/clientes`, {
