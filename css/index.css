@@ -49,7 +49,7 @@ nav a {
 }
 
 nav a:hover {
-  background-color: #007BFF;
+  background-color: #9909e1;
   color: white;
   border-radius: 5px;
 }
@@ -147,8 +147,7 @@ nav a:hover {
 
 /* --- Styles for the "Add to Cart" button --- */
 .add-to-cart-btn {
-  background-color: #9909e1
-  ;
+  background-color: #9909e1;
   /* A vibrant green */
   color: white;
   border: none;
@@ -169,8 +168,7 @@ nav a:hover {
 }
 
 .add-to-cart-btn:hover {
-  background-color: #c66af4
-  ;
+  background-color: #c66af4;
   /* Darker green on hover */
   transform: translateY(-2px);
   /* Slight lift effect */
@@ -231,27 +229,46 @@ nav a:hover {
 }
 
 /* Estilos del boton carrito*/
-.cart-button {
-  position: relative;
-  /*display: inline-block;*/ 
-  text-decoration: none; /* para quitar subrayado */
+.btn-cart-buton {
+  display: flex;
+  /* centra horizontalmente */
+  justify-content: center;
+  /* centra verticalmente */
+  align-items: center;
+  /* separa hacia la izquierda */
+  margin-left: 20px;
+  /* separa hacia la derecha */
+  margin-right: 20px;
+  /* separa de arriba */
+  margin-top: 5px;
+}
+
+.cart-buton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  /* espacio entre el icono y el número */
+  text-decoration: none;
 }
 
 .cart-icon {
-  width: 40px;
-  height: auto;
+  width: 32px;
+  /* ajusta tamaño de icono */
+  height: 32px;
 }
 
 .cart-count {
-  position: relative;
-  top: -5px;
-  right: -5px;
-  font-size: 12px;
-  padding: 2px 6px;
-  border-radius: 50%;
+  font-size: 14px;
   font-weight: bold;
+  color: white;
+  background: rgb(65, 216, 60);
+  border-radius: 50%;
+  padding: 2px 6px;
+  min-width: 18px;
+  text-align: center;
 }
 
-.btn-cart-buton {
-  border:2px solid purple;
+.cart-count:empty {
+  display: none;
 }

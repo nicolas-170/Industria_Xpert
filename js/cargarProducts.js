@@ -102,21 +102,17 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (existingProductIndex > -1) {
             cart[existingProductIndex].quantity = (cart[existingProductIndex].quantity || 1) + 1;
         } else {
-            cart.push({ ...product, quantity: 1 }); // Añadir con cantidad inicial de 1
+            cart.push({ ...product, quantity: 1 });
         }
 
         localStorage.setItem('cart', JSON.stringify(cart));
-        console.log("Carrito actual:", numberCart);
-
         incrementarNumeroCarrito()
     }
 
-    function incrementarNumeroCarrito(){
-        if (isNaN(numberCart.value)){
+    function incrementarNumeroCarrito() {
+        valor = parseInt(numberCart.innerText, 10)
+        if (isNaN(valor)) {
             valor = 0
-        } else{
-          console.log(numberCart.value)  
-            valor = numberCart.value
         }
         numberCart.textContent = valor + 1
     }
