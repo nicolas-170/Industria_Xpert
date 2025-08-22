@@ -3,6 +3,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     const numberCart = document.getElementById("number-cart");
     const API_URL = `${API_BASE_URL}/productos/obtener-todos`;
 
+    // 🔹 Inicializa el contador del carrito al cargar la página
+    actualizarNumeroCarrito();
+
     // Define un producto de prueba simple
     const productoDePrueba = {
         id_producto: "0",
@@ -11,7 +14,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         color: "Múltiple",
         cantidad: "1",
         tipo: "Genérico",
-        // Añadimos un precio básico para el ejemplo
         precio: 10.00
     };
 
@@ -22,13 +24,10 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
 
         const productos = await response.json();
-        // Si no hay productos o la respuesta está vacía, usa el de prueba
         if (!productos || productos.length === 0) {
             console.warn("La API no retornó productos. Mostrando producto de prueba.");
             renderProductos([productoDePrueba]);
         } else {
-            // Asegúrate de añadir un precio si tu API no lo da, o el carrito no funcionará bien.
-            // Aquí, asumimos un precio fijo si no viene de la API.
             const productosConPrecio = productos.map(p => ({ ...p, precio: p.precio || 10.00 }));
             renderProductos(productosConPrecio);
         }
@@ -43,15 +42,11 @@ document.addEventListener("DOMContentLoaded", async () => {
         renderProductos([productoDePrueba]);
     }
 
-    /**
-     * Renderiza los productos en la página.
-     * @param {Array} productos - Un array de objetos producto.
-     */
     function renderProductos(productos) {
-        productosContainer.innerHTML = ''; // Limpiar el contenedor
+        productosContainer.innerHTML = '';
         productos.forEach(producto => {
             const article = document.createElement("article");
-            const imageUrl = `assets/images/image.png`;
+            const imageUrl = `assets/img/image.png`;
 
             article.innerHTML = `
                 <img src="${imageUrl}" alt="${producto.nombre}" />
@@ -83,7 +78,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             productosContainer.appendChild(article);
         });
 
-        // Añadir event listeners después de que todos los botones existan
         document.querySelectorAll('.add-to-cart-btn').forEach(button => {
             button.addEventListener('click', (event) => {
                 const productData = JSON.parse(event.target.dataset.product);
@@ -92,10 +86,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     }
 
-    /**
-     * Añade un producto al carrito en localStorage.
-     * @param {Object} product - El objeto producto a añadir.
-     */
     function addToCart(product) {
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
         const existingProductIndex = cart.findIndex(item => item.id_producto === product.id_producto);
@@ -106,14 +96,18 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
 
         localStorage.setItem('cart', JSON.stringify(cart));
-        incrementarNumeroCarrito()
+        actualizarNumeroCarrito();
     }
 
-    function incrementarNumeroCarrito() {
-        valor = parseInt(numberCart.innerText, 10)
-        if (isNaN(valor)) {
-            valor = 0
+    function actualizarNumeroCarrito() {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let totalItems = 0;
+        cart.forEach(item => {
+            totalItems += item.quantity || 1;
+        });
+        if (totalItems === 0) {
+            return
         }
-        numberCart.textContent = valor + 1
+        numberCart.textContent = totalItems;
     }
 });

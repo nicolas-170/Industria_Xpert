@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Mostrar perfil si está autenticado
     userSection.innerHTML = `
       <div class="perfil-info">
-        <img src="assets/images/usuario-de-perfil.png" alt="Perfil">
+        <img src="assets/img/usuario-de-perfil.png" alt="Perfil">
         <span>${user.nombre}</span>
         <button class="logout-btn" onclick="logout()">Cerrar sesión</button>
       </div>
