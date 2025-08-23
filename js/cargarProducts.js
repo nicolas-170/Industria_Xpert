@@ -94,7 +94,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         } else {
             cart.push({ ...product, quantity: 1 });
         }
-
         localStorage.setItem('cart', JSON.stringify(cart));
         actualizarNumeroCarrito();
     }
