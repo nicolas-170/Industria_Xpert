@@ -1,20 +1,138 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <title>Contacto - Tienda Escolar</title>
-  <link rel="stylesheet" href="css/contact.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contáctanos</title>
+  <meta name="description" content="Página de contacto con dirección, teléfono, correo y datos de Nequi" />
+  <link rel="stylesheet" href="/css/contact.css">
 </head>
 <body>
-  <script src="./js/config.js"></script>
-  <script src="./js/contactanos.js"></script>
-  <main>
-    <section class="contact">
-      <h2>Contáctanos</h2> 
-      <form id="contacto">
-        <div>hola</div>
-      </form>
-    </section>
-  </main>
-</body>
+  <main class="card" role="main">
+    <header class="header">
+      <div class="badge" aria-hidden="true">☎︎</div>
+      <div>
+        <h1>Contáctanos</h1>
+        <p class="subtitle">Un solo punto de contacto para atención y pagos por Nequi.</p>
+      </div>
+    </header><section class="content">
+  <!-- Datos de contacto -->
+  <article class="section" aria-labelledby="datos-contacto">
+    <h2 id="datos-contacto">Datos de contacto</h2>
+
+    <div class="item">
+      <!-- Dirección -->
+      <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.686 2 6 4.686 6 8c0 4.077 5.052 10.254 5.27 10.52a1 1 0 0 0 1.46 0C12.948 18.254 18 12.077 18 8c0-3.314-2.686-6-6-6Zm0 8.5A2.5 2.5 0 1 1 12 5a2.5 2.5 0 0 1 0 5Z"/></svg>
+      <div>
+        <div class="label">Dirección</div>
+        <address class="value" style="font-style: normal;">KR 72 L # 34 - 19 SUR, Bogotá, Colombia</address>
+      </div>
+      <div>
+        <button class="btn" onclick="copyText('KR 72 L # 34 - 19 SUR, Bogotá, Colombia')">Copiar</button>
+      </div>
+    </div>
+
+    <div class="item">
+      <!-- Teléfono -->
+      <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.03-.24 11.36 11.36 0 0 0 3.56.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A16 16 0 0 1 3 8a1 1 0 0 1 1-1h3.49a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.56 1 1 0 0 1-.24 1.03l-2.2 2.2Z"/></svg>
+      <div>
+        <div class="label">Número de contacto</div>
+        <div class="value"><a class="link" href="tel:+573114727624" id="tel-link">+57 3114727624</a></div>
+      </div>
+      <div style="display:flex; gap:8px;">
+        <button class="btn" onclick="copyText('+57 3114727624')">Copiar</button>
+        <a class="btn" href="https://wa.me/573114727624" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="item">
+      <!-- Correo -->
+      <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4.236-7.2 5.4a1 1 0 0 1-1.2 0L4 8.236V6l8 6 8-6v2.236Z"/></svg>
+      <div>
+        <div class="label">Correo electrónico</div>
+        <div class="value"><a class="link" href="betsandyro@hotmal.com">betsandyro@hotmal.com</a></div>
+      </div>
+      <div>
+        <button class="btn" onclick="copyText('betsandyro@hotmal.com')">Copiar</button>
+      </div>
+    </div>
+
+    <div class="item">
+      <!-- Nequi -->
+      <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10.012 10.012 0 0 0 12 2Zm1 15h-2v-2h2Zm0-4h-2V7h2Z"/></svg>
+      <div>
+        <div class="label">Nequi</div>
+        <div class="value"><strong>Sandrita papeleria</strong> · <span id="nequi-num">3114727624</span></div>
+        <p class="note">Pagos y transferencias a nombre indicado.</p>
+      </div>
+      <div>
+        <button class="btn" onclick="copyText('3114727624')">Copiar</button>
+      </div>
+    </div>
+  </article>
+
+  <!-- Mapa (opcional: reemplaza el src con tu dirección) -->
+  <aside class="section" aria-labelledby="mapa">
+    <h2 id="mapa">Ubicación (opcional)</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.864102360234!2d-74.1451063252088!3d4.618322395356419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9ebca28d9521%3A0x689e84d7837b98ed!2sCed%20O.e.a.!5e0!3m2!1ses!2sco!4v1755987280346!5m2!1ses!2sco" 
+    class="map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <p class="note">Reemplaza la dirección del mapa y los datos de ejemplo por los tuyos reales.</p>
+  </aside>
+</section>
+
+<footer>
+  <span>© <span id="year"></span> Tu Empresa</span>
+  <span>·</span>
+  <a class="link" href="#" onclick="alert('Aquí puedes enlazar tu política de privacidad.'); return false;">Política de privacidad</a>
+</footer>
+
+  </main>  <!-- Datos estructurados (SEO opcional) -->  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Tu Empresa",
+    "url": "https://tusitio.com",
+    "email": "contacto@tuempresa.com",
+    "telephone": "+57 300 123 4567",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "KR 72 L # 34 - 19 SUR",
+      "addressLocality": "Bogotá",
+      "addressCountry": "CO"
+    }
+  }
+  </script>  <script>
+    // Año automático en el pie de página
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Copiar texto al portapapeles
+    async function copyText(text) {
+      try {
+        await navigator.clipboard.writeText(text);
+        toast('Copiado al portapapeles');
+      } catch (e) {
+        // Fallback
+        const ta = document.createElement('textarea');
+        ta.value = text; document.body.appendChild(ta); ta.select();
+        document.execCommand('copy'); document.body.removeChild(ta);
+        toast('Copiado');
+      }
+    }
+
+    // Mini toast
+    function toast(msg) {
+      const t = document.createElement('div');
+      t.textContent = msg;
+      Object.assign(t.style, {
+        position: 'fixed', inset: 'auto 50% 24px auto', transform: 'translateX(-50%)',
+        background: 'var(--card)', color: 'var(--text)', border: '1px solid rgba(148,163,184,.35)',
+        padding: '10px 14px', borderRadius: '12px', boxShadow: '0 10px 25px rgba(0,0,0,.25)',
+        zIndex: 9999, opacity: 0, transition: 'opacity .2s ease, transform .2s ease'
+      });
+      document.body.appendChild(t);
+      requestAnimationFrame(() => { t.style.opacity = 1; t.style.transform = 'translateX(-50%) translateY(-6px)'; });
+      setTimeout(() => { t.style.opacity = 0; t.style.transform = 'translateX(-50%)'; setTimeout(()=>t.remove(), 180); }, 1500);
+    }
+  </script></body>
 </html>

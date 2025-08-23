@@ -1,8 +1,7 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #fafafa;
-  color: #333;
+  background-color: #c66af4;
 }
 
 header {
@@ -15,7 +14,7 @@ header {
   text-align: center;
   margin: 10px 0 20px;
   font-size: 2.2em;
-  color: #2c3e50;
+  color: #9909e1;
 }
 
 nav {
@@ -23,8 +22,8 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding-bottom: 10px;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #af1bef;
+  border-bottom: 1px solid #af1bef;
 }
 
 .nav-left {
@@ -42,7 +41,7 @@ nav {
 
 nav a {
   text-decoration: none;
-  color: #2c3e50;
+  color: #01c2d0;
   font-weight: 500;
   padding: 8px 12px;
   transition: background-color 0.3s, color 0.3s;
@@ -58,13 +57,13 @@ nav a:hover {
 .hero {
   text-align: center;
   padding: 40px 20px;
-  background-color: #eaf1f8;
+  background-color: #c66af4;
 }
 
 .hero h2 {
   font-size: 1.8em;
   margin-bottom: 20px;
-  color: #007BFF;
+  color: #edf4f4 ;
 }
 
 .hero img {
@@ -77,14 +76,14 @@ nav a:hover {
 /* Sección de productos */
 .productos {
   padding: 40px;
-  background-color: #ffffff;
+  background-color: #f8f8f8;
 }
 
 .productos h3 {
   text-align: center;
   font-size: 1.6em;
   margin-bottom: 30px;
-  color: #2c3e50;
+  color: #01c2d0;
 }
 
 .grid-productos {
@@ -95,11 +94,11 @@ nav a:hover {
 }
 
 .grid-productos article {
-  background-color: #fdfdfd;
-  border: 1px solid #e0e0e0;
+  background-color: #d7ddc6;
+  border: 1px solid #a7ab9c;
   border-radius: 10px;
   padding: 15px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 6px rgba(15, 211, 11, 0.05);
   transition: transform 0.2s;
   display: flex;
   flex-direction: column;
@@ -121,7 +120,7 @@ nav a:hover {
 .grid-productos h4 {
   margin: 0 0 10px 0;
   font-size: 1.1em;
-  color: #555;
+  color: #c66af4;
 }
 
 /* Styles for product information rows */
@@ -191,13 +190,13 @@ nav a:hover {
   display: inline-block;
   padding: 10px 20px;
   background-color: #9909e1;
-  color: #fff;
+  color: #ebe6e6;
   text-decoration: none;
   border-radius: 999px;
   font-weight: bold;
   font-size: 16px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(211, 15, 15, 0.1);
 }
 
 .register:hover {
