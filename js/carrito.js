@@ -60,7 +60,12 @@ document.addEventListener("DOMContentLoaded", () => {
         cartContainer.appendChild(article);
     });
 
-    totalContainer.textContent = `Total: $${total.toFixed(2)}`;
+    totalContainer.innerHTML =`
+    <a href="apartado.html">
+        <button class="boton-apartado" > 
+            Apartar pedido $${total.toFixed(2)}
+        </button>
+    </a>`;
 
     // Event listener para eliminar productos
     document.querySelectorAll('.remove-btn').forEach(btn => {

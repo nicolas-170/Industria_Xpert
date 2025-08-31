@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         color: "Múltiple",
         cantidad: "1",
         tipo: "Genérico",
-        precio: 10.00
+         precio: 0
     };
 
     try {
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             console.warn("La API no retornó productos. Mostrando producto de prueba.");
             renderProductos([productoDePrueba]);
         } else {
-            const productosConPrecio = productos.map(p => ({ ...p, precio: p.precio || 10.00 }));
+            const productosConPrecio = productos.map(p => ({ ...p, precio: p.precio || 0.00 }));
             renderProductos(productosConPrecio);
         }
 
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 </div>
                 <div class="product-info-row">   
                     <span class="label">Precio:</span>
-                    <span class="value">$${(producto.precio || 0).toFixed(2)}</span>
+                    <span class="value">$${producto.precio}</span>
                 </div>
                 <button class="add-to-cart-btn" data-product='${JSON.stringify(producto)}'>
                     Añadir al Carrito

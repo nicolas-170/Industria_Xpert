@@ -1,0 +1,49 @@
+  <!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Resumen de Pedido</title>
+  <link rel="stylesheet" href="css/apartado.css" />
+</head>
+<body>
+  <main class="container">
+    <section class="card glow-border" aria-labelledby="titulo-resumen">
+      <h1 id="titulo-resumen">Resumen de pedido</h1>
+
+      <!-- Nombre -->
+      <div class="row">
+        <label for="fullName">Nombre:</label>
+        <span id="fullName">Jane Doe</span>
+      </div>
+
+      <!-- Dirección -->
+      <div class="row">
+        <label for="address">Dirección:</label>
+        <span id="address">Calle 123 #45-67, Bogotá</span>
+      </div>
+
+      <!-- Código de apartado / Código postal -->
+      <div class="row">
+        <label for="zipCode">Código de apartado:</label>
+        <span id="zipCode">110111</span>
+      </div>
+
+      <!-- Lista de productos -->
+      <div class="row">
+        <label for="productList">Productos:</label>
+        <ul id="productList" class="products">
+          <li>Cuaderno rayado</li>
+        </ul>
+      </div>
+
+      <!-- Total -->
+      <div class="row total">
+        <label for="totalAmount">Total:</label>
+        <span id="totalAmount"></span>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+ 

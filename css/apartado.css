@@ -1,0 +1,102 @@
+:root{
+  --radius: 20px;
+  --bg: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+  /* Gradiente para el borde moderno */
+  --glow-a: #4facfe;
+  --glow-b: #00f2fe;
+}
+
+*{ box-sizing: border-box; margin:0; padding:0; }
+body{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ece9e6, #ffffff);
+  font-family: "Segoe UI", Roboto, sans-serif;
+  color: var(--text);
+}
+
+/* Contenedor principal */
+.container{
+  width: 100%;
+  max-width: 900px;   /* más grande */
+  padding: 24px;
+}
+
+/* Tarjeta con estilo moderno */
+.card{
+  position: relative;
+  border-radius: var(--radius);
+  background: var(--bg);
+  padding: 48px;              /* más grande */
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+  overflow: hidden;
+  font-size: 1.1rem;
+}
+
+/* Borde difuminado moderno */
+.glow-border::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(135deg, var(--glow-a), var(--glow-b));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: 0;
+}
+
+/* Efecto blur afuera del cuadro */
+.glow-border::after{
+  content: "";
+  position: absolute;
+  inset: -15px;
+  border-radius: calc(var(--radius) + 15px);
+  background: radial-gradient(70% 70% at 50% 20%, var(--glow-a), transparent 70%),
+              radial-gradient(70% 70% at 80% 80%, var(--glow-b), transparent 70%);
+  filter: blur(25px);
+  opacity: .25;
+  z-index: -1;
+}
+
+/* Contenido */
+.card > *{ position: relative; z-index: 1; }
+
+h1{
+  font-size: 1.8rem;
+  margin-bottom: 32px;
+  font-weight: 700;
+  text-align: center;
+  color: #2563eb;
+}
+
+.row{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 16px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.row:last-of-type{ border-bottom: none; }
+
+label{
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.products{
+  margin: 0;
+  padding-left: 18px;
+}
+
+.total{
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #111827;
+}
