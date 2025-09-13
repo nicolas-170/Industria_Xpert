@@ -70,6 +70,7 @@ nav a:hover {
   max-width: 100%;
   height: auto;
   border-radius: 10px;
+  width: 250px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
@@ -88,12 +89,14 @@ nav a:hover {
 
 .grid-productos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 30px;
   justify-items: center;
 }
 
 .grid-productos article {
+  width: 200px;
+  
   background-color: #d7ddc6;
   border: 1px solid #a7ab9c;
   border-radius: 10px;

@@ -1,11 +1,11 @@
 :root{
   --radius: 20px;
   --bg: #ffffff;
-  --text: #111827;
-  --muted: #6b7280;
+  --text: #25bcbc;
+  --muted: #302f31;
   /* Gradiente para el borde moderno */
-  --glow-a: #4facfe;
-  --glow-b: #00f2fe;
+  --glow-a: #01c2d0;
+  --glow-b: #01c2d0;
 }
 
 *{ box-sizing: border-box; margin:0; padding:0; }
@@ -14,7 +14,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #ece9e6, #ffffff);
+  background: linear-gradient(135deg, #c66af4, #c66af4);
   font-family: "Segoe UI", Roboto, sans-serif;
   color: var(--text);
 }
@@ -72,7 +72,7 @@ h1{
   margin-bottom: 32px;
   font-weight: 700;
   text-align: center;
-  color: #2563eb;
+  color: #25bcbc;
 }
 
 .row{

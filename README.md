@@ -1,2 +1,2 @@
-# Industria_Xpert
-Proyecto Industria Xpert front-end
+# Magic-Papers
+Proyecto Magic-Papers front-end
