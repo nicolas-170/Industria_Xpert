@@ -1,4 +1,4 @@
-  <!doctype html>
+<!doctype html>
 <html lang="es">
 <head>
   <meta charset="utf-8" />
@@ -7,34 +7,32 @@
   <link rel="stylesheet" href="css/apartado.css" />
 </head>
 <body>
-  <main class="container">
-    <section class="card glow-border" aria-labelledby="titulo-resumen">
+  <main class="container" id="main-container">
+    <section class="card glow-border" aria-labelledby="titulo-resumen" id="pedido-section">
       <h1 id="titulo-resumen">Resumen de pedido</h1>
 
       <!-- Nombre -->
       <div class="row">
         <label for="fullName">Nombre:</label>
-        <span id="fullName">Jane Doe</span>
+        <span id="fullName"></span>
       </div>
 
       <!-- Dirección -->
       <div class="row">
         <label for="address">Dirección:</label>
-        <span id="address">Calle 123 #45-67, Bogotá</span>
+        <span id="address"></span>
       </div>
 
-      <!-- Código de apartado / Código postal -->
+      <!-- Código de apartado -->
       <div class="row">
         <label for="zipCode">Código de apartado:</label>
-        <span id="zipCode">110111</span>
+        <span id="zipCode"></span>
       </div>
 
       <!-- Lista de productos -->
       <div class="row">
         <label for="productList">Productos:</label>
-        <ul id="productList" class="products">
-          <li>Cuaderno rayado</li>
-        </ul>
+        <ul id="productList" class="products"></ul>
       </div>
 
       <!-- Total -->
@@ -42,8 +40,21 @@
         <label for="totalAmount">Total:</label>
         <span id="totalAmount"></span>
       </div>
+
+      <!-- Subir comprobante (solo si total > 0) -->
+      <div class="row" id="comprobanteRow" style="display: none;">
+        <label for="comprobante">Comprobante de pago:</label>
+        <input type="file" id="comprobante" accept="image/*">
+      </div>
+
+      <!-- Botón confirmar -->
+      <div class="row">
+        <button id="confirmBtn">✅ Confirmar y apartar pedido</button>
+      </div>
     </section>
   </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/apartado.js"></script>
 </body>
 </html>
- 

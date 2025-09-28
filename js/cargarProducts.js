@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         color: "Múltiple",
         cantidad: "1",
         tipo: "Genérico",
-         precio: 0
+        precio: 0
     };
 
     try {

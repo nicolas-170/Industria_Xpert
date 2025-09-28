@@ -1,44 +1,54 @@
-:root{
+:root {
   --radius: 20px;
   --bg: #ffffff;
-  --text: #25bcbc;
-  --muted: #302f31;
-  /* Gradiente para el borde moderno */
+  --text: #01c2d0;    /* Azul turquesa */
+  --muted: #555;      /* Texto secundario gris */
+  --accent: #c66af4;  /* Morado */
   --glow-a: #01c2d0;
-  --glow-b: #01c2d0;
+  --glow-b: #c66af4;
 }
 
-*{ box-sizing: border-box; margin:0; padding:0; }
-body{
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #c66af4, #c66af4);
+  background: linear-gradient(135deg, var(--accent), var(--accent));
   font-family: "Segoe UI", Roboto, sans-serif;
   color: var(--text);
 }
 
 /* Contenedor principal */
-.container{
+.container {
   width: 100%;
-  max-width: 900px;   /* más grande */
+  max-width: 900px;
   padding: 24px;
 }
 
 /* Tarjeta con estilo moderno */
-.card{
+.card {
   position: relative;
   border-radius: var(--radius);
   background: var(--bg);
-  padding: 48px;              /* más grande */
-  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+  padding: 48px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .1);
   overflow: hidden;
   font-size: 1.1rem;
+  transition: transform 0.3s ease;
 }
 
-/* Borde difuminado moderno */
-.glow-border::before{
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Borde con gradiente brillante */
+.glow-border::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -51,8 +61,7 @@ body{
   z-index: 0;
 }
 
-/* Efecto blur afuera del cuadro */
-.glow-border::after{
+.glow-border::after {
   content: "";
   position: absolute;
   inset: -15px;
@@ -65,17 +74,21 @@ body{
 }
 
 /* Contenido */
-.card > *{ position: relative; z-index: 1; }
+.card > * {
+  position: relative;
+  z-index: 1;
+}
 
-h1{
-  font-size: 1.8rem;
+h1 {
+  font-size: 2rem;
   margin-bottom: 32px;
   font-weight: 700;
   text-align: center;
-  color: #25bcbc;
+  color: var(--accent);
 }
 
-.row{
+/* Filas de información */
+.row {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -83,20 +96,55 @@ h1{
   border-bottom: 1px solid #e5e7eb;
 }
 
-.row:last-of-type{ border-bottom: none; }
+.row:last-of-type {
+  border-bottom: none;
+}
 
-label{
+label {
   font-weight: 600;
   color: var(--muted);
 }
 
-.products{
+.products {
   margin: 0;
-  padding-left: 18px;
+  padding-left: 20px;
+  list-style-type: disc;
 }
 
-.total{
-  font-size: 1.3rem;
+.products li {
+  margin-bottom: 6px;
+}
+
+/* Total destacado */
+.total {
+  font-size: 1.4rem;
   font-weight: 700;
-  color: #111827;
+  color: var(--accent);
+  text-align: right;
+}
+
+/* Botón elegante */
+button {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--glow-a), var(--glow-b));
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 12px 24px;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
 }
