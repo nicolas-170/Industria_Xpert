@@ -42,41 +42,43 @@ document.addEventListener("DOMContentLoaded", async () => {
         renderProductos([productoDePrueba]);
     }
 
-    function renderProductos(productos) {
+    async function renderProductos(productos) {
         productosContainer.innerHTML = '';
-        productos.forEach(producto => {
+
+        for (const producto of productos) {
             const article = document.createElement("article");
-            const imageUrl = `assets/img/image.png`;
+            const imageUrl = await imagenProducto(producto.nombre);
 
             article.innerHTML = `
-                <img src="${imageUrl}" alt="${producto.nombre}" />
-                <h4>${producto.nombre}</h4>
-                <div class="product-info-row">
-                    <span class="label">Talla:</span>
-                    <span class="value">${producto.talla || 'N/A'}</span>
-                </div>
-                <div class="product-info-row">
-                    <span class="label">Color:</span>
-                    <span class="value">${producto.color || 'N/A'}</span>
-                </div>
-                <div class="product-info-row">
-                    <span class="label">Cantidad:</span>
-                    <span class="value">${producto.cantidad || 'N/A'}</span>
-                </div>
-                <div class="product-info-row">
-                    <span class="label">Tipo:</span>
-                    <span class="value">${producto.tipo || 'N/A'}</span>
-                </div>
-                <div class="product-info-row">   
-                    <span class="label">Precio:</span>
-                    <span class="value">$${producto.precio}</span>
-                </div>
-                <button class="add-to-cart-btn" data-product='${JSON.stringify(producto)}'>
-                    Añadir al Carrito
-                </button>
-            `;
+            <img src="${imageUrl}" alt="${producto.nombre}" />
+            <h4>${producto.nombre}</h4>
+            <div class="product-info-row">
+                <span class="label">Talla:</span>
+                <span class="value">${producto.talla || 'N/A'}</span>
+            </div>
+            <div class="product-info-row">
+                <span class="label">Color:</span>
+                <span class="value">${producto.color || 'N/A'}</span>
+            </div>
+            <div class="product-info-row">
+                <span class="label">Cantidad:</span>
+                <span class="value">${producto.cantidad || 'N/A'}</span>
+            </div>
+            <div class="product-info-row">
+                <span class="label">Tipo:</span>
+                <span class="value">${producto.tipo || 'N/A'}</span>
+            </div>
+            <div class="product-info-row">   
+                <span class="label">Precio:</span>
+                <span class="value">$${producto.precio}</span>
+            </div>
+            <button class="add-to-cart-btn" data-product='${JSON.stringify(producto)}'>
+                Añadir al Carrito
+            </button>
+        `;
+
             productosContainer.appendChild(article);
-        });
+        }
 
         document.querySelectorAll('.add-to-cart-btn').forEach(button => {
             button.addEventListener('click', (event) => {
@@ -109,4 +111,30 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
         numberCart.textContent = totalItems;
     }
+
+    function imagenProducto(nombreProducto) {
+        // Extensiones posibles
+        const extensiones = ['png', 'jpg', 'jpeg'];
+        const basePath = 'assets/img/';
+
+        // Retorna una Promesa porque se usa fetch
+        return new Promise(async (resolve) => {
+            for (const ext of extensiones) {
+                const ruta = `${basePath}${nombreProducto}.${ext}`;
+                try {
+                    // Verificamos si existe la imagen sin generar error en consola
+                    const response = await fetch(ruta, { method: 'HEAD' });
+                    if (response.ok) {
+                        resolve(ruta);
+                        return;
+                    }
+                } catch (_) {
+                    // Ignorar errores de red
+                }
+            }
+            // Si no encontró ninguna, devuelve la por defecto
+            resolve(`${basePath}imagen.png`);
+        });
+    }
+
 });
