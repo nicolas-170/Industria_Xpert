@@ -116,7 +116,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         // Extensiones posibles
         const extensiones = ['png', 'jpg', 'jpeg'];
         const basePath = 'assets/img/';
-
+        nombreProducto = nombreProducto.trim();
+        
         // Retorna una Promesa porque se usa fetch
         return new Promise(async (resolve) => {
             for (const ext of extensiones) {
