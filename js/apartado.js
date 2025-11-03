@@ -24,7 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // ---- Si hay usuario, seguimos como antes ----
   const fullNameEl = document.getElementById("fullName");
   const addressEl = document.getElementById("address");
-  const zipCodeEl = document.getElementById("zipCode");
   const productListEl = document.getElementById("productList");
   const totalAmountEl = document.getElementById("totalAmount");
   const comprobanteRow = document.getElementById("comprobanteRow");
@@ -33,7 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Llenar datos de usuario
   fullNameEl.textContent = user.nombre || "N/A";
   addressEl.textContent = user.direccion || "N/A";
-  zipCodeEl.textContent = user.identificacion || "N/A";
 
   // Llenar productos y calcular total
   let total = 0;
@@ -48,16 +46,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Mostrar input de comprobante solo si hay un total a pagar o diferente de 0 
   if (total > 0) comprobanteRow.style.display = "block";
-
   // Función para generar código random
-  function generarCodigo(longitud = 10) {
-    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  function generarCodigo(longitud = 4) {
+    const chars = "0123456789";
     return Array.from({ length: longitud }, () => chars.charAt(Math.floor(Math.random() * chars.length))).join("");
   }
 
   // Confirmar y enviar pedido
   confirmBtn.addEventListener("click", async () => {
-    const codigo = generarCodigo(10);
+    const codigo = generarCodigo(4);
 
     // El destinatario del correo ahora se toma de la constante EMAIL_TO
     const emailTo = EMAIL_TO;
@@ -80,7 +77,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const body = {
       emailTo,
-      codigo,
       mensaje: generarMensajePedido(codigo, cart, total),
       tipoMensaje: "text/plain",
       imagen
@@ -94,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       if (res.ok) {
-        alert("Pedido confirmado y enviado con éxito ✅");
+      alert("Pedido confirmado y enviado con éxito ✅. \nTu código de entrega es: "+ codigo);
         localStorage.removeItem("cart");
         window.location.href = "index.html";
       } else {
