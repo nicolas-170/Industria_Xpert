@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     } catch (error) {
         console.error("Error al obtener los productos:", error);
         productosContainer.innerHTML = `
-            <p style="text-align: center; grid-column: 1 / -1; color: #d9534f;">
+            <p style="text-align: center; grid-column: 1 / -1; color: #b04fd9ff;">
                 No se pudieron cargar los productos. Mostrando un ejemplo.
             </p>
         `;
