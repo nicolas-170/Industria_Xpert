@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     function imagenProducto(nombreProducto) {
         // Extensiones posibles
         const extensiones = ['png', 'jpg', 'jpeg'];
-        const basePath = 'assets/img/';
+        const basePath = './assets/img/';
         nombreProducto = nombreProducto.trim();
         
         // Retorna una Promesa porque se usa fetch
