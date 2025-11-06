@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     function imagenProducto(nombreProducto) {
         // Extensiones posibles
-        const extensiones = ['jpeg'];
+        const extensiones = ['png'];
         const basePath = '/assets/img/';
         nombreProducto = nombreProducto.trim();
 
