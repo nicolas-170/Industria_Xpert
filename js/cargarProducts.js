@@ -114,15 +114,14 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     function imagenProducto(nombreProducto) {
         // Extensiones posibles
-        const extensiones = ['png', 'jpg', 'jpeg'];
+        const extensiones = ['jpeg'];
         const basePath = '/assets/img/';
         nombreProducto = nombreProducto.trim();
-        
+
         // Retorna una Promesa porque se usa fetch
         return new Promise(async (resolve) => {
             for (const ext of extensiones) {
                 const ruta = `${basePath}${nombreProducto}.${ext}`;
-                console.log(window.location.origin + ruta)
                 try {
                     // Verificamos si existe la imagen sin generar error en consola
                     const response = await fetch(ruta, { method: 'HEAD' });
